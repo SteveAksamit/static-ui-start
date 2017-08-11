@@ -11,28 +11,11 @@ app.use(bodyparser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, "public")));
 
-// function static(directory) {
-//   return function(req, res, next) {
-//     const path = req.path;  //  /bootstrap.css
-//     const fs = require('fs');
-//     fs.readdir(directory, function(fileNames)) {
-//       if (fileNames.includes(path)) {
-//         res.sendFile(directory + path)
-//       } else {
-//         next()
-//       }
-//     }
-//   }
-// }
-
-
 app.engine('html', nunjucks.render);
 app.set('view engine', 'html');
 nunjucks.configure('views', { noCache: true });
 
-app.get('/', function(req, res){
-  res.render('index', {message: "hello!"})
-});
+app.use('/', require('./routes'))
 
 app.use("*", function(req, res, next) {
   const err = new Error('Page not found');
@@ -48,6 +31,6 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(3001, function() {
-  console.log("server has started");
+app.listen(3000, function() {
+  console.log("server listening on port 3000!");
 });
