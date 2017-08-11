@@ -17,6 +17,8 @@ nunjucks.configure('views', { noCache: true });
 
 app.use('/', require('./routes'))
 
+app.use('/jquery', require('./node_modules/jquery'));
+
 app.use("*", function(req, res, next) {
   const err = new Error('Page not found');
   err.status = 404;
