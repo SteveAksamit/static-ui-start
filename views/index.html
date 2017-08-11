@@ -1,7 +1,27 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} 
 
 {% block content %}
 
-  <h1>{{message}}<h1>
+<!-- <h1>{{Hotels}}<h1> -->
+  <label>Hotels: </label>
+    <select>
+      {% for Hotel in Hotels %}
+        <option value={{Hotel.name}} >{{Hotel.name}} </option>
+      {% endfor %}
+    </select>
+  
 
+    <label>Restaurants: </label>
+    <select>
+      {% for Restaurant in Restaurants %}
+        <option value={{Restaurant.name}} >{{Restaurant.name}} </option>
+      {% endfor %}
+    </select>
+
+  <label>Activities: </label>
+    <select>
+      {% for Activity in Activities %}
+        <option value={{Activity.name}} >{{Activity.name}} </option>
+      {% endfor %}
+    </select>
 {% endblock %}
