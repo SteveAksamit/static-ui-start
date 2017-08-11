@@ -2,26 +2,73 @@
 
 {% block content %}
 
-<!-- <h1>{{Hotels}}<h1> -->
-  <label>Hotels: </label>
-    <select>
+<div class="column">
+  <select class="ui dropdown">
+      <option value="">Select Hotel</option>
       {% for Hotel in Hotels %}
         <option value={{Hotel.name}} >{{Hotel.name}} </option>
       {% endfor %}
     </select>
-  
+    <button class="circular ui icon button">
+        <i>+</i>
+      </button>
+</div>
 
-    <label>Restaurants: </label>
-    <select>
+<div class="column">
+    <select class="ui dropdown">
+        <option value="">Select Restaurant</option>
       {% for Restaurant in Restaurants %}
         <option value={{Restaurant.name}} >{{Restaurant.name}} </option>
       {% endfor %}
     </select>
+    <button class="circular ui icon button">
+        <i>+</i>
+      </button>
+</div>
 
-  <label>Activities: </label>
-    <select>
+<div class="column">
+    <select class="ui dropdown">
+        <option value="">Select Activity</option>
       {% for Activity in Activities %}
         <option value={{Activity.name}} >{{Activity.name}} </option>
       {% endfor %}
     </select>
+    <button class="circular ui icon button">
+        <i>+</i>
+      </button>
+</div>
+
+<div class="column selected day">
+<div>
+  <p>Selected Day</p>
+</div>
+</div>  
+<div>
+    <div class="column">
+        <div class="ui horizontal list">
+            <div class="item">
+              <div class="top aligned content">
+                Day 1
+              </div>
+              <button class="circular ui icon button">
+                  <i>+</i>
+                </button>
+            </div>
+            
+          </div>
+    </div>
+    <div class="column">
+        <div class="ui horizontal list">
+            <div class="item">
+              <div class="top aligned content">
+                Day 2
+              </div>
+              <button class="circular ui icon button">
+                  <i>+</i>
+                </button>
+            </div>
+            
+          </div>
+    </div>
+</div>
 {% endblock %}
