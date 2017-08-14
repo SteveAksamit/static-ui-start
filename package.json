@@ -6,7 +6,7 @@
   "scripts": {
     "build:css": "node-sass -w -r assets/stylesheets -o public/semantic",
     "start:production": "node app",
-    "start:dev": "nodemon -e html,css,js theServerFilename",
+    "start:dev": "nodemon -e html,css,js app.js",
     "start": "npm run start:dev",
     "seed": "node seed.js"
   },

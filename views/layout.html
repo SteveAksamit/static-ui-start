@@ -7,48 +7,37 @@
       <title>Trip Planner Static</title>
     </head>
     
-    <body>
-      
-      <div class="ui bottom attached segment pushable">
-        <div class="ui menu">
-          <a class="item">Trip Planner</a>
+  <body>
+        <div class="ui top fixed menu">
+          <span class="item"><i class="marker icon"></i>
+            Trip Planner</span>
           <a class="item">Home</a>
           <a class="item">About</a>
           <a class="item">Contact</a>
         </div>
-        
+
         <div class="ui visible right vertical sidebar menu">
-          {% block content %}
-          
+          {% block selections %}
           {% endblock %}
-          
-          <a class="item">
-            <i class="block layout icon"></i>
-            Topics
-          </a>
         </div>
+
         <div class="pusher">
-          <div class="ui basic segment">
-            <h3 class="ui header"><div id="map"></div></h3>
-            
+          <p>Your site's actual content</p>
+        </div>
               
-              <script>
-                  function initMap() {
-                    var uluru = {lat: -25.363, lng: 131.044};
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                      zoom: 4,
-                      center: uluru
-                    });
-                    var marker = new google.maps.Marker({
-                      position: uluru,
-                      map: map
-                    });
-                  }
-                </script>
-              </div>
-            </div>
-          </div>
-      
+        <script>
+            function initMap() {
+              var uluru = {lat: -25.363, lng: 131.044};
+              var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: uluru
+              });
+              var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+              });
+            }
+        </script>
       <script
         src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="

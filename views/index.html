@@ -1,74 +1,107 @@
 {% extends "layout.html" %} 
 
-{% block content %}
-
-<div class="column">
-  <select class="ui dropdown">
-      <option value="">Select Hotel</option>
-      {% for Hotel in Hotels %}
-        <option value={{Hotel.name}} >{{Hotel.name}} </option>
-      {% endfor %}
-    </select>
-    <button class="circular ui icon button">
-        <i>+</i>
-      </button>
-</div>
-
-<div class="column">
-    <select class="ui dropdown">
-        <option value="">Select Restaurant</option>
-      {% for Restaurant in Restaurants %}
-        <option value={{Restaurant.name}} >{{Restaurant.name}} </option>
-      {% endfor %}
-    </select>
-    <button class="circular ui icon button">
-        <i>+</i>
-      </button>
-</div>
-
-<div class="column">
-    <select class="ui dropdown">
-        <option value="">Select Activity</option>
-      {% for Activity in Activities %}
-        <option value={{Activity.name}} >{{Activity.name}} </option>
-      {% endfor %}
-    </select>
-    <button class="circular ui icon button">
-        <i>+</i>
-      </button>
-</div>
-
-<div class="column selected day">
-<div>
-  <p>Selected Day</p>
-</div>
-</div>  
-<div>
-    <div class="column">
-        <div class="ui horizontal list">
-            <div class="item">
-              <div class="top aligned content">
-                Day 1
-              </div>
-              <button class="circular ui icon button">
-                  <i>+</i>
-                </button>
-            </div>
-            
-          </div>
+{% block selections %}
+<div class="ui bound top sticky">
+  <div class="column selections">
+    <div class="ui black right pointing label">
+      <i class="hotel icon"></i> Hotels
+      <select class="ui dropdown">
+          <option value="">Select Hotel</option>
+          {% for Hotel in Hotels %}
+            <option value={{Hotel.name}}>{{Hotel.name}} </option>
+          {% endfor %}
+        </select>
     </div>
-    <div class="column">
-        <div class="ui horizontal list">
-            <div class="item">
-              <div class="top aligned content">
-                Day 2
-              </div>
-              <button class="circular ui icon button">
-                  <i>+</i>
-                </button>
-            </div>
-            
-          </div>
+      <button class="circular ui icon button add">
+        <i class="plus icon"></i>
+      </button>
+  </div>
+
+  <div class="column selections">
+      <div class="ui blue right pointing label">
+        <i class="spoon icon"></i>Food
+        <select class="ui dropdown floated right">
+            <option value="">Select Restaurant</option>
+          {% for Restaurant in Restaurants %}
+            <option value={{Restaurant.name}} >{{Restaurant.name}} </option>
+          {% endfor %}
+        </select>
+      </div>
+      <button class="circular ui icon button add">
+          <i class="plus icon"></i>
+      </button>
+  </div>
+
+  <div class="column selections">
+    <div class="ui green right pointing label">
+      <i class="bicycle icon"></i>Activities  
+      <select class="ui dropdown">
+          <option value="">Select Activity</option>
+        {% for Activity in Activities %}
+          <option value={{Activity.name}} >{{Activity.name}} </option>
+        {% endfor %}
+      </select>
     </div>
+    <button class="circular ui icon button add">
+        <i class="plus icon"></i>
+    </button>
+  </div>
+</div>
+
+    
+<div class="ui bound bottom sticky">
+  <div class="selected day content">
+    Selected Day
+    <button class="circular ui icon button remove day">
+      <i class="remove icon"></i>
+    </button>
+  </div>
+
+  <div class="ui very relaxed horizontal list">
+      <button class="circular ui icon button">
+        <i class="icon day">1</i>
+      </button>
+      <button class="circular ui icon button">
+        <i class="icon day">2</i>
+      </button>
+      <button class="circular ui icon button">
+        <i class="icon day">3</i>
+      </button>
+      <button class="circular ui icon button">
+        <i class="plus icon"></i>
+      </button>
+  </div>
+  <div class="ui container itinerary">   
+    <div>My Hotel
+      <ul>
+        <li>
+          Selected Hotel
+        </li>
+      </ul>
+    </div>
+    <div>My Restaurants
+        <ul>
+            <li>
+              Selected Restaurant
+            </li>
+            <li>
+              Selected Restaurant
+            </li>
+            <li>
+              Selected Restaurant
+            </li>
+          </ul>
+    </div>
+    <div>My Activities
+        <ul>
+            <li>
+              Selected Activity
+            </li>
+            <li>
+              Selected Activity
+            </li>
+          </ul>
+    </div>
+  </div>
 </div>
 {% endblock %}
